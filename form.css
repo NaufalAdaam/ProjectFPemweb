@@ -1,0 +1,15 @@
+.nav-link.active {
+    color: #ff3c00 !important;
+    border-bottom: 2px solid #ff3c00;
+  }
+body{
+  background-color: #0a122b;
+  background-position: center;
+  background-size: cover;
+}
+.text-center{
+  color: #ffff;
+}
+.form-label {
+  color: white;
+}

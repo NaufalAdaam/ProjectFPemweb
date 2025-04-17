@@ -1,0 +1,11 @@
+body, html {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .nav-link.active {
+    color: #ff3c00 !important;
+    border-bottom: 2px solid #ff3c00;
+  }
+body{
+background-image: url(image/pexels-pixabay-2150.jpg);
+}

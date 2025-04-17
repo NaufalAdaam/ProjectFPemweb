@@ -1,0 +1,79 @@
+.nav-link.active {
+  color: #ff3c00 !important;
+  border-bottom: 2px solid #ff3c00;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f63a4;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(image/Desain\ tanpa\ judul\ 3.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+#about-us {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 60px 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.399);
+
+  /* ✅ Tambahan dari poin 2: latar belakang semi-transparan */
+  background-color: rgba(15, 15, 99, 0.75);
+
+  /* ✅ Tambahan dari poin 4: transisi halus */
+  transition: all 0.3s ease;
+}
+
+#about-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #00ffe7;
+}
+
+#about-us p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+
+  /* ✅ Tambahan dari poin 3: kontras teks lebih lembut */
+  color: #e0e0f0;
+}
+
+#about-us strong {
+  color: #ff9dfd;
+}
+
+#about-us em {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #bbbbff;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  #about-us {
+    padding: 40px 20px;
+  }
+
+  #about-us h2 {
+    font-size: 2rem;
+  }
+
+  #about-us p {
+    font-size: 1rem;
+  }
+
+  #about-us em {
+    font-size: 1rem;
+  }
+}
