@@ -1,0 +1,16 @@
+.nav-link.active {
+    color: #ff3c00 !important;
+    border-bottom: 2px solid #ff3c00;
+  }
+
+  /* Styling dasar untuk tombol */
+.btn-outline-light {
+    color: #fff!important;; /* Warna teks default */
+    background-color: #ff3c00!important;;
+    border-color: #ff3c00!important;;
+    transition: all 0.3s ease; /* Efek transisi halus */
+}
+
+
+
+  
