@@ -17,11 +17,14 @@ $options = [
 
 // Buat koneksi PDO
 try {
+
+    
     $pdo = new PDO($dsn, $username, $password, $options);
 } catch (PDOException $e) {
     echo json_encode([
         "success" => false,
         "error" => "Database connection failed: " . $e->getMessage()
+        
     ]);
     exit;
 }
