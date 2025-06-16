@@ -8,9 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    // Ambil user berdasarkan username
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->execute([$username]);
+   $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
+$stmt->execute([$username, $username]);
     $user = $stmt->fetch();
 
     if ($user) {

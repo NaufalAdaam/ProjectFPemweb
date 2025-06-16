@@ -18,19 +18,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $harga = $_POST['harga'] ?? 0;
 
     try {
-        // Update query untuk include user_id
-        $stmt = $pdo->prepare("INSERT INTO pesanan (user_id, nama, telepon, produk, jumlah, alamat, harga, status_pesanan)
-                               VALUES (?, ?, ?, ?, ?, ?, ?, 'pending')");
-        $stmt->execute([$user_id, $nama, $telepon, $produk, $jumlah, $alamat, $harga]);
+    // Simpan data ke database
+    $stmt = $pdo->prepare("INSERT INTO pesanan (user_id, nama, telepon, produk, jumlah, alamat, harga, status_pesanan)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, 'pending')");
+    $stmt->execute([$user_id, $nama, $telepon, $produk, $jumlah, $alamat, $harga]);
 
-        echo "<script>
-            alert('Pesanan berhasil disimpan!');
-            window.location.href = 'riwayatpembelian.php';
-        </script>";
-        exit;
-    } catch (PDOException $e) {
-        echo "<script>alert('Gagal menyimpan data: " . addslashes($e->getMessage()) . "');</script>";
-    }
+    // ✅ Redirect langsung ke halaman riwayat dengan pesan sukses
+    header("Location: riwayatpembelian.php?success=Pesanan berhasil dikirim!");
+    exit;
+
+} catch (PDOException $e) {
+    // Jika gagal, redirect juga sambil bawa pesan error
+    header("Location: riwayatpembelian.php?error=Gagal menyimpan data: " . urlencode($e->getMessage()));
+    exit;
+}
 }
 
 // Ambil info user untuk ditampilkan
@@ -176,12 +177,6 @@ document.getElementById('formPemesanan').addEventListener('submit', function(e) 
         return false;
     }
     
-    // Konfirmasi sebelum submit
-    const total = document.getElementById('totalDisplay').value;
-    if (!confirm(`Konfirmasi pesanan dengan total ${total}?`)) {
-        e.preventDefault();
-        return false;
-    }
 });
 </script>
 
