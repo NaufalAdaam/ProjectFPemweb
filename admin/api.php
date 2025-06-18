@@ -100,7 +100,7 @@ function handlePost($pdo, $input) {
         return;
     }
     
-    if (!in_array($role, ['user', 'moderator', 'admin'])) {
+    if (!in_array($role, ['user', 'admin'])) {
         http_response_code(400);
         echo json_encode(['success' => false, 'error' => 'Invalid role. Must be user, moderator, or admin']);
         return;
